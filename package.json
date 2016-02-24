@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schiz/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/schiz/test/issues"
+  },
+  "homepage": "https://github.com/schiz/test#readme",
+  "devDependencies": {
+    "semantic-ui": "^2.1.8"
+  }
+}
