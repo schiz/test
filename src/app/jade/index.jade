@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Authorization
+
+    //- Responsive
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge, chrome=1")
+    meta(name="HandheldFriendly" content="true")
+
+    //- Styles
+    link(rel="stylesheet", href="css/styles.css")
+
+
+  body
+    img(src="css/bkg/bg.png", alt="").bg
+
+    .auth-pane
+      .sign-in
+        span.auth-text login into your account
+        .form-input
+          input.username-input(type="text" placeholder="User Name")
+          i.svg-common.svg-username_ico
+        .form-input
+          input.password-input(type="password" placeholder="Password")
+          i.svg-common.svg-password_ico
+        button.signin-btn sign in
+        input#remember-me(type="checkbox" name="remember_me")
+        label(for="remember-me").remember-label Remember me
+        a(href="#").forgot-pass forgot password?
+
+      .sign-separator or
+        //- span or
+      .sign-in-social
+        span.signup-text Don't have an account? Sign Up!
+        a(href="#").signup-social-btn
+          span.social-logo
+            i.svg-common.svg-fb-ico
+          span.social-text Sign In with Facebook
+        a(href="#").signup-social-btn
+          span.social-logo
+            i.svg-common.svg-twitter-ico
+          span.social-text Sign In with Twitter
+        a(href="#").signup-social-btn
+          span.social-logo
+            i.svg-common.svg-gplus-ico
+          span.social-text Sign In with Google+
+
+    //- Javascript
+    script(src='js/app.js')

@@ -1,0 +1,380 @@
+@import 'partials/normalize.styl'
+@import 'partials/mixins.styl'
+@import 'partials/variables.styl'
+@import 'partials/svg-sprite.styl'
+
+// Lost grid setups
+@lost gutter 24px
+@lost cycle none
+
+a
+  text-decoration none
+
+select
+  appearance none
+  border-radius 0
+
+input:focus
+select:focus
+textarea:focus
+button:focus
+  outline none
+
+html
+  font-size 10px
+
+h1
+h2
+h3
+h4
+h5
+h6
+  -webkit-margin-before 0
+  -webkit-margin-after 0
+  -webkit-margin-start 0
+  -webkit-margin-end 0
+  font-size 2rem
+
+p
+  -webkit-margin-before: 0
+  -webkit-margin-after: 0
+  -webkit-margin-start: 0
+  -webkit-margin-end: 0
+
+fieldset
+  -webkit-margin-start 0
+  -webkit-margin-end 0
+  -webkit-padding-before 0
+  -webkit-padding-start 0
+  -webkit-padding-end 0
+  -webkit-padding-after 0
+
+button
+  color none
+  padding 0
+  border none
+  border-image-source none
+  border-image-slice none
+  border-image-width none
+  border-image-outset none
+  border-image-repeat none
+
+ul    
+  list-style-type disc;
+  -webkit-margin-before 0
+  -webkit-margin-after 0
+  -webkit-margin-start 0
+  -webkit-margin-end 0
+  -webkit-padding-start 0
+
+*
+  box-sizing border-box
+
+hr
+  border 0
+  border-top 1px solid #dce0e0
+
+// Fonts
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../fonts/museoslab100/museo_slab_100-webfont.eot');
+  src: url('../fonts/museoslab100/museo_slab_100-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/museoslab100/museo_slab_100-webfont.woff2') format('woff2'),
+       url('../fonts/museoslab100/museo_slab_100-webfont.woff') format('woff'),
+       url('../fonts/museoslab100/museo_slab_100-webfont.ttf') format('truetype'),
+       url('../fonts/museoslab100/museo_slab_100-webfont.svg#museo_slab100') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSlabSemiBold';
+    src: url('../fonts/museoslab300/museo_slab_300-webfont.eot');
+    src: url('../fonts/museoslab300/museo_slab_300-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museoslab300/museo_slab_300-webfont.woff2') format('woff2'),
+         url('../fonts/museoslab300/museo_slab_300-webfont.woff') format('woff'),
+         url('../fonts/museoslab300/museo_slab_300-webfont.ttf') format('truetype'),
+         url('../fonts/museoslab300/museo_slab_300-webfont.svg#museo_slab300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSlabBold';
+    src: url('../fonts/museoslab500/museo_slab_500-webfont.eot');
+    src: url('../fonts/museoslab500/museo_slab_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museoslab500/museo_slab_500-webfont.woff2') format('woff2'),
+         url('../fonts/museoslab500/museo_slab_500-webfont.woff') format('woff'),
+         url('../fonts/museoslab500/museo_slab_500-webfont.ttf') format('truetype'),
+         url('../fonts/museoslab500/museo_slab_500-webfont.svg#museo_slab500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hover-opacity
+  transition()
+  hover-opacity()
+
+body
+  position relative
+  width 100vw
+  height 100vh
+  lost-align center
+  clearfix()
+
+  .bg
+    position absolute
+    width 100%
+    height 100%
+    background-image linear-gradient(30deg, #322a2f 0%, #4e4e4e 57%, #5d5759 100%)
+    box-shadow inset 0 0 20rem rgba(0, 0, 0, 0.75)
+  
+  .auth-pane
+    background-color white
+    border-radius 1.4rem 1.5rem 1.5rem 1.4rem
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    +desktop()
+      width 74rem
+      padding 4.6rem
+    +tablet()
+      lost-column 4/7
+      padding 3rem
+    +mobile()
+      display block
+      lost-column 4/5
+      padding 1.5rem
+    
+    .sign-in
+      
+      +tablet()
+        lost-column 3/6
+      +desktop()
+        float left
+        width 30.3rem
+      +mobile()
+        float left
+        width 100%
+      
+      .auth-text
+        display block
+        color heading
+        text-transform capitalize
+        +below(935px)
+          font normal 1.7rem MuseoSlabBold
+        +above(935px)
+          font normal 1.8rem MuseoSlabBold
+        +below(1016px)
+          font normal 1.6rem MuseoSlabBold
+        +below(956px)
+          font normal 1.5rem MuseoSlabBold
+        +below(925px)
+          font normal 1.4rem MuseoSlabBold
+        +below(893px)
+          font normal 1.3rem MuseoSlabBold
+        +above(1076px)
+          font normal 2rem MuseoSlabBold
+          
+          
+      
+      .form-input
+        position relative
+        width 100%
+        height 4rem
+        lost-align vertical
+        &:nth-of-type(1)
+          margin-top 2.5rem
+        &:nth-of-type(2)
+          margin-top 2rem
+        
+        input
+          width 100%
+          border 0.1rem solid #ddd
+          height inherit
+          font-family MuseoSlab
+          font-size 1.5rem
+          color graytext
+          padding 0 3rem 0 1.6rem
+          +below(780px)
+            font-size 1.4rem
+          +below(760px)
+            font-size 1.2rem
+          +below(730px)
+            font-size 1rem
+          +below(700px)
+            padding 0 1.5rem 0 1rem
+        
+        i
+          position absolute
+          right 1.5rem
+          +below(700px)
+            display none
+      
+      .signin-btn
+        width 100%
+        height 4rem
+        border 0.1rem solid #79b42b
+        background-color #79b42b
+        margin-top 2rem
+        line-height 4rem
+        text-align center
+        color white
+        font normal 1.8rem MuseoSlabBold
+        text-transform capitalize
+        &:hover
+          background-color lightness(#79b42b, 40%)
+      
+      #remember-me
+        display none
+        &:checked + .remember-label
+          &:before
+            background url(../css/bkg/checkbox_checked.png) no-repeat
+          
+      
+      .remember-label
+        display inline-block
+        margin-top 3.2rem
+        color graytext
+        font normal 1.3rem MuseoSlabSemiBold
+        cursor pointer
+        &:hover
+          color black
+        +below(1038px)
+          margin-top 1rem
+          float left
+          width 100%
+        +below(749px)
+          font-size 1rem
+          line-height 1.6rem
+        +below(687px)
+          font-size .8rem
+          line-height 1.6rem
+        +mobile()
+          float left
+          width 50%
+          font-size 1rem
+          
+        &:before
+          display block
+          content ''
+          background url(../css/bkg/checkbox.png) no-repeat
+          float left
+          width 1.6rem
+          height 1.6rem
+          margin-right 1rem
+      
+      .forgot-pass
+        float right
+        margin-top 3.2rem
+        color graytext
+        font normal 1.3rem MuseoSlabSemiBold
+        text-transform capitalize
+        &:hover
+          color black
+        +below(1038px)
+          margin-top 1rem
+          float left
+          width 100%
+        +below(749px)
+          font-size 1rem
+        +below(687px)
+          font-size .8rem
+        +mobile()
+          float right
+          width 50%
+          text-align right
+          font-size 1rem
+    
+    .sign-separator
+      background url(../css/bkg/vertic-line.png) no-repeat center
+      font italic 1.4rem MuseoSlabBold
+      color darkerGray
+      text-align center
+      line-height 25.7rem
+      +tablet()
+        float left
+        lost-column 1/6
+        width 2rem
+      +desktop()
+        float left
+        width 3rem
+      +mobile()
+        float left
+        width 100%
+        background none
+        line-height 3rem
+        background url(../css/bkg/horiz-line.png) no-repeat center
+        
+    .sign-in-social
+      float right
+      text-align right
+      width 24.8rem
+      +mobile()
+        width 100%
+      
+      .signup-text
+        display block
+        float right
+        color textBlue
+        font normal 1.3rem MuseoSlabSemiBold
+        +mobile()
+          display none
+        +desktop()
+          height 3rem
+          line-height 3rem
+      
+      .signup-social-btn
+        float right
+        display block
+        width 100%
+        height 4rem
+        lost-utility clearfix
+        margin-top 2rem
+        clearfix()
+        span
+          float left
+        .social-logo
+        .social-text
+          height 100%
+        .social-logo
+          width 20%
+          lost-align center
+        .social-text
+          width 80%
+          text-align center
+          font normal 1.5rem MuseoSlabSemiBold
+          color white
+          line-height 4rem
+          +below(876px)
+            font-size 1.4rem
+          +below(803px)
+            font-size 1.2rem
+          +below(682px)
+            font-size 1rem
+        
+        &:nth-of-type(1)
+          &:hover .social-text
+            background-color darkBlue
+          .social-logo
+            background-color darkBlue
+          .social-text
+            background-color lightBlue
+          +below(1279px)
+            margin-top 3.4rem
+          +mobile()
+            margin-top .5rem
+        &:nth-of-type(2)
+          &:hover .social-text
+            background-color twiDarkBlue
+          .social-logo
+            background-color twiDarkBlue
+          .social-text
+            background-color twiLightBlue
+        &:nth-of-type(3)
+          &:hover .social-text
+            background-color darkRed
+          .social-logo
+            background-color darkRed
+          .social-text
+            background-color lightRed
